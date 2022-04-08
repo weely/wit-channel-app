@@ -53,8 +53,11 @@
 	flex-direction:row;
 	align-items: center;
 	justify-content: center;
-	border: solid 1px #eee;
-	box-shadow: 12rpx 12rpx 8rpx 0 rgba(10,16,20,.24);
+	border: solid 1px #ccc;
+	padding: 12rpx;
+	box-shadow: 0 0 10rpx 4rpx rgb(0 0 0 / 35%);
+	/* box-shadow: 0rpx 0rpx 8rpx 6rpx rgba(10,16,20,.24); */
+	/* box-shadow: 8rpx 16rpx 8rpx 0 rgba(10,16,20,.24); */
 }
 
 .good-icon {

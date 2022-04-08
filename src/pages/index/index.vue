@@ -1,10 +1,13 @@
 <template>
 	<view class="content">
-		<image @error="imageError" :src="imgSrc" style="width:100%;"></image>
-
+		<view class="banner-container">
+			<image @error="imageError" :src="imgSrc" class="image"></image>
+		</view>
 		<view>
 			<scroll-view :scroll-top="scrollTop" scroll-y="true" class="scroll-Y scroll-view-container" @scrolltoupper="upper" @scrolltolower="lower" @scroll="scroll">
-				<good-card v-for="(item, index) in goodCardList" :options="item" :key="index" class="scroll-view-item uni-bg-red"></good-card>
+				<view  class="scroll-view-item-container" v-for="(item, index) in goodCardList" :key="index">
+					<good-card :options="item" class="scroll-view-item"></good-card>
+				</view>
 			</scroll-view>
 		</view>
 	</view>
@@ -14,11 +17,11 @@
 import goodCard from '../../components/good-card.vue'
 
 const demoItem = {
-	title: '服务1',
+	title: '服务',
 	intro: '简介',
 	props: ['属性', '属性2'],
 	price: 100,
-	goodIcon: 'http://tupian.qqjay.com/u/2017/0628/1_223343_4.jpg'
+	goodIcon: 'https://s3.bmp.ovh/imgs/2022/04/08/d31e121520054dda.jpg'
 }
 
 
@@ -28,7 +31,7 @@ export default {
 	},
 	data() {
 		return {
-			imgSrc: 'http://tupian.qqjay.com/u/2017/0628/1_223343_4.jpg',
+			imgSrc: 'https://s3.bmp.ovh/imgs/2022/04/08/d31e121520054dda.jpg',
 			scrollTop: 0,
 			old: {
 				scrollTop: 0
@@ -68,17 +71,30 @@ export default {
 </script>
 
 <style scoped>
+/* .content {
+	height: 100%;
+} */
+
+.banner-container {
+	height: 450rpx;
+	width: 100%;
+	font-size: 0;
+}
+
+.banner-container .image {
+	width: 100%;
+	height: 100%;
+}
+
 .scroll-view-container {
 	width: 100vw;
 	margin: 0;
 	box-sizing: border-box;
+	padding: 12rpx 16rpx;
 }
 
-::v-deep .uni-scroll-view, .uni-scroll-view-content {
-	box-sizing: border-box;
-	padding: 0 12rpx;
+.scroll-view-item-container {
+	padding: 8rpx 8rpx 24rpx;
 }
-.scroll-view-item {
-	margin-bottom: 32rpx;
-}
+
 </style>
