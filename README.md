@@ -1,4 +1,4 @@
-# wit-channel-app
+# swift-rabbit-mini-app
 
 ## Project setup
 ```

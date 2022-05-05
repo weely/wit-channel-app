@@ -1,6 +1,10 @@
 <template>
 	<view class="content">
 		<view>
+			<image class="avatar"
+				mode="scaleToFill"
+				:src="userInfo.avatarUrl" @error="imageError"></image>
+			<text>{{ userInfo.nickName || '-' }}</text>
 		</view>
 	</view>
 </template>
@@ -9,14 +13,30 @@
 	export default {
 		data() {
 			return {
-				title: '我的'
+				title: '我的',
+				userInfo: {}
 			}
 		},
 		onLoad() {
-
+			this.getUserInfo()
+			uni.setNavigationBarColor({
+				backgroundColor: '#ffffff',
+			})
 		},
 		methods: {
-
+			getUserInfo() {
+				const params = {
+					desc: 'to show',
+					lang: 'zh_CN',
+				}
+				// uni.UserInfo(params).then(res => {
+				// 	this.userInfo = {...res.userInfo}
+				// 	console.log('---res', res)
+				// })
+			},
+			imageError: function(e) {
+				console.error('image发生error事件，携带值为' + e.detail.errMsg)
+			}
 		}
 	}
 </script>
@@ -29,6 +49,11 @@
 		justify-content: center;
 	}
 
+	.avator {
+		width: 200rpx;
+		height: 200rpx;
+		background-color: #eeeeee;
+	}
 
 	.text-area {
 		display: flex;
