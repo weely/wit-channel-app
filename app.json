@@ -1,0 +1,34 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/order/index",
+    "pages/userInfo/index",
+    "pages/logs/logs"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "服务",
+    "navigationBarTextStyle":"black"
+  },
+  "tabBar": {
+    "list": [{
+      "pagePath": "pages/index/index",
+      "iconPath": "assets/icons/home.png",
+      "selectedIconPath": "assets/icons/homeActive.png",
+      "text": "首页"
+    }, {
+      "pagePath": "pages/order/index",
+      "iconPath": "assets/icons/order.png",
+      "selectedIconPath": "assets/icons/orderActive.png",
+      "text": "订单"
+    }, {
+      "pagePath": "pages/userInfo/index",
+      "iconPath": "assets/icons/my.png",
+      "selectedIconPath": "assets/icons/myActive.png",
+      "text": "我的"
+    }]
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}
