@@ -1,0 +1,26 @@
+<view style="text-align: center" wx:if="{{pageLoading}}">
+	<view>
+		<span slot="text" class="loading-text">加载中...</span>
+	</view>
+</view>
+<view class="page-container">
+  <view class="page-swiper">
+    <swiper autoplay="true" indicator-dots>
+      <block wx:for="{{swiperOptions}}" wx:key="unique">
+        <swiper-item>
+          <view class="swiper-item">
+            <image src="{{item.img}}" mode="aspectFill" lazy-load binderror="imageLoadError" class="swiper-item__bg"></image>
+          </view>
+        </swiper-item>
+      </block>
+    </swiper>
+  </view>
+  <view class="page-content">
+    <goods-list
+      wr-class="goods-list-container"
+      goodsList="{{goodsList}}"
+      bind:click="goodListClickHandle"
+      bind:place-order="goodListPlaceOrderHandle"
+    />
+  </view>
+</view>
