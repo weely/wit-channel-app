@@ -9,7 +9,7 @@ const allGoods = [
     storeId: '1000',
     spuId: '0',
     title: '连衣裙',
-    resume: '白色短袖连衣裙荷叶边裙摆宽松韩版休闲纯白清爽优雅连衣裙',
+    resume: '白色短袖连衣裙荷叶边裙摆宽松韩版休闲纯白清爽优雅连衣裙,白色短袖连衣裙荷叶边裙摆宽松韩版休闲纯白清爽优雅连衣裙,白色短袖连衣裙荷叶边裙摆宽松韩版休闲纯白清爽优雅连衣裙,白色短袖连衣裙荷叶边裙摆宽松韩版休闲纯白清爽优雅连衣裙',
     primaryImage: 'https://cdn-we-retail.ym.tencent.com/tsr/goods/nz-09a.png',
     images: [
       'https://cdn-we-retail.ym.tencent.com/tsr/goods/nz-09a.png',

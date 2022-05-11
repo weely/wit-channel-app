@@ -17,4 +17,5 @@
 
 .page-content {
   padding-top: 24rpx;
+  width: 100%;
 }

@@ -8,7 +8,7 @@
   "window":{
     "backgroundTextStyle":"light",
     "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "服务",
+    "navigationBarTitleText": "首页",
     "navigationBarTextStyle":"black"
   },
   "tabBar": {

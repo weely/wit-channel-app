@@ -17,7 +17,7 @@
   </view>
   <view class="page-content">
     <goods-list
-      wr-class="goods-list-container"
+      class="goods-list-container"
       goodsList="{{goodsList}}"
       bind:click="goodListClickHandle"
       bind:place-order="goodListPlaceOrderHandle"
