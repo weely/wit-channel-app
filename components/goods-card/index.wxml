@@ -1,7 +1,7 @@
 <view id="{{independentID}}" class="goods-card" bind:tap="clickHandle" data-goods="{{ goods }}">
   <view class="goods-card__main">
     <view class="goods-card__thumb" bind:tap="clickThumbHandle">
-      <image wx:if="{{ !!goods.thumb }}" class="goods-card__img" src="{{ goods.thumb }}" mode="center" lazy-load />
+      <image wx:if="{{ !!goods.thumb }}" class="goods-card__img" src="{{ goods.thumb }}" mode="aspectFit" lazy-load />
     </view>
     <view class="goods-card__body">
       <view class="goods-card__upper">
@@ -10,12 +10,14 @@
       </view>
       <view class="goods-card__down">
         <view wx:if="{{ goods.price }}" class="spec-for-price">
-          <text class="price">{{goods.price}}</text><text class="currency">{{currency}}</text>
+          <text class="currency">{{currency}}</text><text class="price">{{goods.price}}</text>
         </view>
         <view wx:if="{{ goods.originPrice && isValidityLinePrice }}" class="goods-card__origin-price">
-          <text class="price">{{goods.price}}</text><text class="currency">{{currency}}</text>
+          <text class="currency">{{currency}}</text><text class="price">{{goods.price}}</text>
         </view>
-        <icon class="goods-card__place-order" prefix="wr" name="cartAdd" id="{{independentID}}-cart" data-id="{{independentID}}" catchtap="placeOrderHandle" size="48rpx" color="#FA550F" />
+        <view class="goods-card__place-order" id="{{independentID}}-cart" data-id="{{independentID}}" catchtap="placeOrderHandle">
+          <text>下单</text><image class="icon__place-order" src="/assets/icons/next.png" mode="aspectFit" />
+        </view>
       </view>
     </view>
   </view>

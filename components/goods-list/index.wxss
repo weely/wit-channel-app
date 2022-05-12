@@ -5,3 +5,7 @@
   padding: 0;
   background: #fff;
 }
+
+.goods-card-item {
+  margin: 8rpx 0;
+}

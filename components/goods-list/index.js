@@ -37,7 +37,8 @@ Component({
 
     onPLaceOrder(e) {
       const { index } = e.currentTarget.dataset
-      this.triggerEvent('placeOrder', { ...e.detail, index })
+      console.log('--index--', index, e.detail)
+      this.triggerEvent('place-order', { ...e.detail, index })
     },
 
     onClickGoodsThumb(e) {

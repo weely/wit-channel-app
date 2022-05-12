@@ -71,7 +71,11 @@ Page({
       url: `/pages/goods/details/index?spuId=${spuId}`,
     })
   },
-  goodListPlaceOrderHandle() {
+  goodListPlaceOrderHandle(e) {
+    const { goods } = e.detail
+
+    console.log('--index--', goods)
+
     wx.showToast({
       title: '下单',
       icon: 'success',

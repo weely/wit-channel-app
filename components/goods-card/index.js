@@ -137,5 +137,6 @@ Component({
         this.intersectionObserverContext = null
       }
     },
+
   },
 })
