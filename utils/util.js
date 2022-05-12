@@ -42,7 +42,7 @@ export function formatPrice (price, priceUnit='fen', fill=false) {
     }
     if (!fill) {
       // 如果 fill 为 false， 不显示小数末尾的0
-      if (pArr[1] === '00') pArr[1] = ''
+      if (pArr[1] === '00') pArr[1] = '' 
       else if (pArr[1][1] === '0') pArr[1] = pArr[1][0]
     }
     if (isMinus) {

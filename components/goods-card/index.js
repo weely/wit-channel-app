@@ -1,3 +1,5 @@
+import { formatPrice } from '../../utils/util'
+
 Component({
   options: {
     addGlobalClass: true,
@@ -24,7 +26,14 @@ Component({
         if (data.originPrice && data.price && data.originPrice < data.price) {
           isValidityLinePrice = false
         }
-        this.setData({ goods: data, isValidityLinePrice })
+        const priceArr = formatPrice(data.price)
+        const originPriceArr = formatPrice(data.originPrice)
+        this.setData({
+          goods: data,
+          isValidityLinePrice,
+          priceArr: priceArr,
+          originPriceArr: originPriceArr
+        })
       },
     },
     currency: {
@@ -49,6 +58,8 @@ Component({
     independentID: '',
     goods: { id: '' },
     isValidityLinePrice: false,
+    priceArr: [],
+    originPriceArr: []
   },
 
   lifetimes: {
