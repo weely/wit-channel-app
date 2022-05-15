@@ -1,0 +1,9 @@
+<view wx:if="{{visible}}" class="popup popup-class">
+  <view class="popup__overlay" bind:tap="onOverlayClick"></view>
+  <view class="popup__content popup--position-bottom">
+    <view class='popup__close' wx:if="{{closeBtn}}">
+      <view class='cancel' bind:tap="onCloseClick">取消</view>
+    </view>
+    <slot />
+  </view>
+</view>

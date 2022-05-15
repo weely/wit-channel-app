@@ -1,0 +1,35 @@
+.modify-user-page {
+  background-color: #f5f5f5;
+  width: 100vw;
+  height: 100vh;
+}
+
+.m-form {
+  padding: 24rpx 0 32rpx;
+  font-size: 32rpx;
+  color: #303030;
+  line-height: 48rpx;
+  font-weight: normal;
+}
+
+.m-form-item .form-item__content {
+  height: 80rpx;
+  padding: 0 40rpx;
+  background-color: #fff;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+
+.m-form-item .form-label {
+  margin-right: 16rpx;
+  width: 120rpx;
+}
+
+.m-form-item .info {
+  display: block;
+  padding: 0 40rpx 24rpx;
+  font-size: 28rpx;
+  color: #606060;
+}

@@ -1,0 +1,47 @@
+<!--pages/goods/details/index.wxml-->
+<view class="goods-detail-page">
+  <view wx:if="{{details.images.length > 0}}" class="gd-swiper-wrapper">
+    <swiper autoplay="true" bindchange="onSwiperChange" class="gd-swiper">
+      <block wx:for="{{details.images}}" wx:for-item="item" wx:for-index="index" wx:key="index">
+        <swiper-item>
+          <view class="swiper-item">
+            <image src="{{item}}" mode="aspectFill" lazy-load class="swipe-img"></image>
+          </view>
+        </swiper-item>
+      </block>
+    </swiper>
+    <view class="swiper-nav">
+      <view class="swiper-nav__fraction">
+        {{current}}/{{details.images.length}}
+      </view>
+    </view>
+  </view>
+  <view class="goods-info">
+    <view class="goods-price">
+      <price
+        wr-class="class-goods-price"
+        symbol-class="class-goods-symbol"
+        price="{{minSalePrice}}"
+        type="lighter"
+      />
+      <view class="class-goods-discount">优惠价</view>
+      <price wr-class="class-goods-del" price="{{maxLinePrice}}" type="delthrough" />
+    </view>
+  
+    <view class="goods-title">{{details.title}}</view>
+    <view class="goods-resume">{{details.resume}}</view>
+  </view>
+
+	<view class="goods-bottom-operation">
+		<view class="operation-groups">
+      <price
+        wr-class="class-goods-fee"
+        symbol-class="class-goods-symbol"
+        label="合计："
+        price="{{minSalePrice}}"
+        type="lighter"
+      />
+      <view bind:tap="toOrder" class="order-btn">立即下单</view>
+    </view>
+	</view>
+</view>
