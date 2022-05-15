@@ -1,0 +1,61 @@
+<!--index.wxml-->
+<view class="user-center-page">
+  <view class="user-center-card">
+    <view class="userinfo">
+      <block wx:if="{{!hasUserInfo}}">
+        <view class="userinfo-avatar" bindtap="toPersonInfo">
+          <open-data type="userAvatarUrl"></open-data>
+        </view>
+        <view wx:if="{{canIUseGetUserProfile}}" class="auth-btn" bindtap="getUserProfile">获取头像昵称</view>
+        <view wx:elif="{{canIUse}}" open-type="getUserInfo" class="auth-btn" bindgetuserinfo="getUserInfo">获取头像昵称</view>
+      </block>
+      <block wx:else>
+        <image bindtap="toPersonInfo" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+        <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+      </block>
+    </view>
+  </view>
+  <view class="userpage-content">
+    <view class="uc-group">
+      <view class="userpage-citem" bindtap="toPersonInfo">
+        <view class="citem-label">个人信息</view>
+        <view class="citem-ricon">
+          <image src="/assets/icons/user.png" mode="aspectFill"></image>
+        </view>
+      </view>
+      <view class="gap-line"></view>
+      <view class="userpage-citem" bindtap="toCarManage">
+        <view class="citem-label">车辆管理</view>
+        <view class="citem-ricon">
+          <image src="/assets/icons/car.png" mode="aspectFill"></image>
+        </view>
+      </view>
+      <view class="gap-line"></view>
+      <view class="userpage-citem" bindtap="toOrderManage">
+        <view class="citem-label">订单管理</view>
+        <view class="citem-ricon">
+          <image src="/assets/icons/cart.png" mode="aspectFill"></image>
+        </view>
+      </view>
+    </view>
+    <view class="uc-group">
+      <view class="userpage-citem" bindtap="toShowCustomerService">
+        <view class="citem-label">客服热线</view>
+        <view class="citem-ricon">
+          <image src="/assets/icons/consult.png" mode="aspectFill"></image>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+
+<popup wx:if="{{showCustomerService}}" visible="{{showCustomerService}}" bind:visible-change="closeCustomerService">
+  <view class="popup-content">
+    <view class="popup-title border-bottom-1px" wx:if="{{customerServiceInfo.serviceTimeDuration}}">
+      服务时间: {{customerServiceInfo.serviceTimeDuration}}
+    </view>
+    <view class="popup-phone {{showKefu ? 'border-bottom-1px' : ''}}" bind:tap="toCall">电话客服</view>
+    <button class="popup-phone border-bottom-1px online" open-type="contact" wx:if="{{showKefu}}">在线客服</button>
+    <view class="popup-close" bind:tap="closeCustomerService">取消</view>
+  </view>
+</popup>

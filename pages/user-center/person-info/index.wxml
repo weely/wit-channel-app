@@ -1,0 +1,34 @@
+<view class="user-info-page">
+  <view class="user-info-content">
+    <view class="ui-item" data-key="avatar">
+      <view class="ui-item-content">
+        <view class="ui-item-label">头像</view>
+        <view class="user-info-avatar">
+          <open-data type="userAvatarUrl"></open-data>
+          <!-- <image src="{{userInfo.avatarUrl}}" mode="cover"></image> -->
+        </view>
+      </view>
+      <!-- <view class="ui-item-icon">
+        <image src="/assets/icons/next_1.png" mode="aspectFill"></image>
+      </view> -->
+    </view>
+    <view class="ui-item" data-key="username" bindtap="toModify">
+      <view class="ui-item-content">
+        <view class="ui-item-label">昵称</view>
+        <view>张三</view>
+      </view>
+      <view class="ui-item-icon">
+        <image src="/assets/icons/next_1.png" mode="aspectFill"></image>
+      </view>
+    </view>
+    <view class="ui-item" data-key="mobile" bindtap="toModify">
+      <view class="ui-item-content">
+        <view class="ui-item-label">手机号</view>
+        <view>13222221111</view>
+      </view>
+      <view class="ui-item-icon">
+        <image src="/assets/icons/next_1.png" mode="aspectFill"></image>
+      </view>
+    </view>
+  </view>
+</view>

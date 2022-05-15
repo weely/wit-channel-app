@@ -1,0 +1,44 @@
+.user-info-page {
+  background-color: #f5f5f5;
+  width: 100vw;
+  height: 100vh;
+}
+.user-info-content {
+  background-color: #fff;
+  padding: 24rpx 40rpx 0;
+}
+.ui-item {
+  display: flex;
+  align-items: center;
+  height: 120rpx;
+  background-color: #fff;
+  color: #303030;
+  font-size: 0;
+  border-bottom: solid 2rpx #eee;
+  position: relative;
+}
+.ui-item .user-info-avatar {
+  right: 8rpx;
+  top: 16rpx;
+  overflow: hidden;
+  width: 96rpx;
+  height: 96rpx;
+  border-radius: 50%;
+  position: absolute;
+}
+
+.ui-item .ui-item-content {
+  flex: 1;
+  font-size: 32rpx;
+  display: flex;
+  justify-content: space-between;
+}
+
+.ui-item .ui-item-icon {
+  width: 48rpx;
+}
+
+.ui-item .ui-item-icon image{
+  width: 48rpx;
+  height: 48rpx;
+}

@@ -3,19 +3,20 @@
 		<span slot="text" class="loading-text">加载中...</span>
 	</view>
 </view>
-<view class="page-container">
-  <view class="page-swiper">
-    <swiper autoplay="true" indicator-dots>
+<view class="home-page">
+  <view class="home-swiper-wrapper">
+    <swiper autoplay="true" indicator-dots class="home-swiper">
       <block wx:for="{{swiperOptions}}" wx:key="unique">
         <swiper-item>
           <view class="swiper-item">
-            <image src="{{item.img}}" mode="aspectFill" lazy-load binderror="imageLoadError" class="swiper-item__bg"></image>
+            <image src="{{item.img}}" mode="aspectFill" lazy-load binderror="imageLoadError" class="swiper-item__img"></image>
           </view>
         </swiper-item>
       </block>
     </swiper>
   </view>
   <view class="page-content">
+    <view class="page-content__title"><text>优质服务</text></view>
     <goods-list
       class="goods-list-container"
       goodsList="{{goodsList}}"
