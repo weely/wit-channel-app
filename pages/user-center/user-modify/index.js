@@ -1,6 +1,7 @@
 
 Page({
   data: {
+    key: '',
     userInfo: {
 
     }
@@ -9,8 +10,8 @@ Page({
 
   },
   onLoad(query) {
-    // const { key } = query
-    // this.setData({ key: key })
+    const { key } = query
+    this.setData({ key: key })
     // wx.setNavigationBarTitle({
     //   title: userMap[key] || '修改个人资料',
     // })
