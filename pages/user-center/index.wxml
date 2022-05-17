@@ -6,12 +6,14 @@
         <view class="userinfo-avatar" bindtap="toPersonInfo">
           <open-data type="userAvatarUrl"></open-data>
         </view>
-        <view wx:if="{{canIUseGetUserProfile}}" class="auth-btn" bindtap="getUserProfile">获取头像昵称</view>
-        <view wx:elif="{{canIUse}}" open-type="getUserInfo" class="auth-btn" bindgetuserinfo="getUserInfo">获取头像昵称</view>
+        <text class="userinfo-nickname">{{userInfo.username}}</text>
+        <!-- <view wx:if="{{canIUseGetUserProfile}}" class="auth-btn" bindtap="getUserProfile">获取头像昵称</view>
+        <view wx:elif="{{canIUse}}" open-type="getUserInfo" class="auth-btn" bindgetuserinfo="getUserInfo">获取头像昵称</view> -->
       </block>
       <block wx:else>
         <image bindtap="toPersonInfo" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
-        <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+        <!-- <text class="userinfo-nickname">{{userInfo.nickName}}</text> -->
+        <text class="userinfo-nickname">{{userInfo.username}}</text>
       </block>
     </view>
   </view>

@@ -7,7 +7,6 @@ const http = (options) => {
       'Authorization': 'Bearer ' + app.globalData.access_token,
       ...options.header
     }
-    console.log('access_token', app.globalData.access_token)
     wx.request({
       url: config.apiHost + options.url,
       method: options.method || 'get',

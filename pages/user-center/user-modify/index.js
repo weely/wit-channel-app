@@ -19,9 +19,10 @@ Page({
   },
   onSave() {
     const params = { ...this.data.userInfo }
-    console.log('------', params)
     updateUser(params).then((res) => {
       if (res.data.code === 200) {
+        app.globalData.userInfo.username = params.username
+        app.globalData.userInfo.mobile = params.mobile
         wx.navigateBack({
           delta: 0,
         })
@@ -36,7 +37,6 @@ Page({
     const { key } = query
     this.setData({ key: key })
 
-    console.log('--app.globalData.userInfo----', app.globalData.userInfo )
     this.setData({
       userInfo: {
         ...app.globalData.userInfo

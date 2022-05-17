@@ -26,12 +26,10 @@ App({
         //   "openid": "oejIM5CcufcOh0iZqMt22Nw6yUAw",
         //   "unionid": "o2K4C5zqKpzvka4R_BbcUt0TFvsc"
         // }
-        console.log(res)
         wx.request({
           url: `https://weely.cc/api/auth/wxLogin?code=${res.code}`,
           method: 'post',
           success(r) {
-            console.log(r)
             const { openid,unionid, access_token, userInfo={id: '', userName: '', mobile: ''} } = r.data
             context.globalData.openid = openid
             context.globalData.unionid = unionid

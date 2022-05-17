@@ -1,8 +1,14 @@
 import { fetchUserCenter } from '../../services/userCenter'
+const app = getApp()
 
 Page({
   data: {
-    userInfo: {},
+    userInfo: {
+      id: '',
+      userName: '',
+      mobile: '',
+      avatarUrl: ''
+    },
     hasUserInfo: false,
     canIUse: wx.canIUse('button.open-type.getUserInfo'),
     canIUseGetUserProfile: false,
@@ -32,9 +38,8 @@ Page({
     wx.getUserProfile({
       desc: '展示用户信息', // 声明获取用户个人信息后的用途，后续会展示在弹窗中，请谨慎填写
       success: (res) => {
-        console.log(res)
         this.setData({
-          userInfo: res.userInfo,
+          'userInfo.avatarUrl': res.userInfo.avatarUrl,
           hasUserInfo: true
         })
       }
@@ -42,7 +47,7 @@ Page({
   },
   getUserInfo(e) {
     this.setData({
-      userInfo: e.detail.userInfo,
+      'userInfo.avatarUrl': e.detail.userInfo.avatarUrl,
       hasUserInfo: true
     })
   },
@@ -81,6 +86,11 @@ Page({
   },
   onShow(){
     this.init()
-    this.getTabBar().init();
+    this.getTabBar().init()
+    this.setData({
+      userInfo: {
+        ...app.globalData.userInfo
+      }
+    })
   }
 })

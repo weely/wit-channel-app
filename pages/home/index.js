@@ -62,8 +62,6 @@ Page({
       this.goodListPagination.index = pageIndex
       this.goodListPagination.num = pageSize
     } catch (err) {
-      console.log('-err--nextList--', err)
-
       this.setData({ goodsListLoadStatus: 3 })
     }
   },
@@ -84,15 +82,6 @@ Page({
       icon: 'success',
       duration: 2000
     })
-  },
-  scroll(e) {
-    console.log(e)
-  },
-  upper(e) {
-    console.log(e)
-  },
-  lower(e) {
-    console.log(e)
   },
   imageLoadError(e){
     console.log(e)
