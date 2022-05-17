@@ -1,11 +1,14 @@
 import { updateUser } from '../../../services/userCenter'
 const app = getApp()
 
-console.log('--app.globalData.userInfo----', app.globalData.userInfo )
 Page({
   data: {
     key: '',
-    userInfo: {...app.globalData.userInfo}
+    userInfo: {
+      id: '',
+      userName: '',
+      mobile: '',
+    }
   },
   bindKeyInput(e) {
     const { key } = e.currentTarget.dataset
@@ -32,5 +35,12 @@ Page({
   onLoad(query) {
     const { key } = query
     this.setData({ key: key })
+
+    console.log('--app.globalData.userInfo----', app.globalData.userInfo )
+    this.setData({
+      userInfo: {
+        ...app.globalData.userInfo
+      }
+    })
   },
 })
