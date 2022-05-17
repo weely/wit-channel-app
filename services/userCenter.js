@@ -1,4 +1,5 @@
-import { config } from '../config/index'
+// import { config } from '../config/index'
+import http from '../utils/http'
 
 const customerServiceInfo = {
     servicePhone: '18566766448',
@@ -16,10 +17,31 @@ function mockFetchUserCenter() {
 
 /** 获取个人中心信息 */
 export function fetchUserCenter() {
-  if (config.useMock) {
-    return mockFetchUserCenter()
-  }
-  return new Promise((resolve) => {
-    resolve('real api');
-  });
+  return mockFetchUserCenter()
+}
+
+export function wxRegisterApi(params) {
+  const { code, mobile, username } = params
+  let data = {}
+  if (mobile) data.mobile = mobile
+  if (username) data.username = username
+
+  return http({
+    url: `/auth/wxLogin?code=${code}`,
+    method: 'post',
+    data
+  })
+}
+
+export function updateUser(params) {
+  const { id, mobile, username } = params
+  const data = {}
+  if (mobile) data.mobile = mobile
+  if (username) data.username = username
+
+  return http({
+    url: `/users/${id}`,
+    method: 'put',
+    data
+  })
 }

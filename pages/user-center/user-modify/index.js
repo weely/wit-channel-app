@@ -1,19 +1,36 @@
+import { updateUser } from '../../../services/userCenter'
+const app = getApp()
 
+console.log('--app.globalData.userInfo----', app.globalData.userInfo )
 Page({
   data: {
     key: '',
-    userInfo: {
-
-    }
+    userInfo: {...app.globalData.userInfo}
+  },
+  bindKeyInput(e) {
+    const { key } = e.currentTarget.dataset
+    const value = e.detail.value
+    this.setData({
+      [key]: value
+    })
   },
   onSave() {
-
+    const params = { ...this.data.userInfo }
+    console.log('------', params)
+    updateUser(params).then((res) => {
+      if (res.data.code === 200) {
+        wx.navigateBack({
+          delta: 0,
+        })
+      } else {
+        wx.showToast({
+          title: '更新失败',
+        })
+      }
+    })
   },
   onLoad(query) {
     const { key } = query
     this.setData({ key: key })
-    // wx.setNavigationBarTitle({
-    //   title: userMap[key] || '修改个人资料',
-    // })
   },
 })

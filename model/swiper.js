@@ -1,10 +1,10 @@
 const images = [
   {
-    img: 'https://tva1.sinaimg.cn/large/0072Vf1pgy1foxkchavg0j31hc0u04gv.jpg',
+    img: 'https://tva1.sinaimg.cn/large/9bd9b167gy1g4c8qcc821j21hc0u0ay3.jpg',
     text: '1',
   },
   {
-    img: 'https://tva1.sinaimg.cn/large/0072Vf1pgy1foxkfbb3c7j31kw0w04ou.jpg',
+    img: 'https://tva1.sinaimg.cn/large/9bd9b167gy1g4lhilz3ukj21hc0xc4am.jpg',
     text: '2',
   },
   {
