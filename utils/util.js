@@ -5,6 +5,10 @@ const formatNumber = n => {
   return n[1] ? n : `0${n}`
 }
 
+export function isFunction(fn) {
+  return Object.prototype.toString.call(fn) === '[object Function]'
+}
+
 export const formatTime = date => {
   const year = date.getFullYear()
   const month = date.getMonth() + 1
@@ -50,4 +54,21 @@ export function formatPrice (price, priceUnit='fen', fill=false) {
     }
   }
   return pArr
+}
+
+function  latLngToRadian(latLng) {
+  return latLng * Math.PI / 180
+}
+
+export function getDistance(pointA, pointB) {
+  const EARTH_RADIUS = 6378000
+
+  const radLat1 = latLngToRadian(pointA.latitude)
+  const radLng1 = latLngToRadian(pointA.longitude)
+  const radLat2 = latLngToRadian(pointB.latitude)
+  const radLng2 = latLngToRadian(pointA.longitude)
+  const a = radLat1 - radLat2
+  const b = radLng1 - radLng2
+
+  return 2 * Math.Asin(Math.Sqrt(Math.Pow(Math.Sin(a / 2), 2) + Math.Cos(radLat1) * Math.Cos(radLat2) * Math.Pow(Math.Sin(b / 2), 2))) * EARTH_RADIUS
 }

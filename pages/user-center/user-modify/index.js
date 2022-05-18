@@ -8,11 +8,16 @@ Page({
       id: '',
       userName: '',
       mobile: '',
+    },
+    primeval: {
+      userName: '',
+      mobile: '',
     }
   },
-  bindKeyInput(e) {
+  bindKeyInput: function(e) {
     const { key } = e.currentTarget.dataset
     const value = e.detail.value
+    this.data[key] = value
     this.setData({
       [key]: value
     })
@@ -33,14 +38,16 @@ Page({
       }
     })
   },
-  onLoad(query) {
-    const { key } = query
-    this.setData({ key: key })
-
+  onLoad() {
+  },
+  onShow() {
     this.setData({
       userInfo: {
         ...app.globalData.userInfo
+      },
+      primeval : {
+        ...app.globalData.userInfo
       }
     })
-  },
+  }
 })

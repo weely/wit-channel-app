@@ -3,7 +3,7 @@
 		<span slot="text" class="loading-text">加载中...</span>
 	</view>
 </view>
-<view class="home-page">
+<view class="home-page" wx:else>
   <view class="home-swiper-wrapper">
     <swiper autoplay="true" indicator-dots class="home-swiper">
       <block wx:for="{{swiperOptions}}" wx:key="unique">
@@ -16,12 +16,20 @@
     </swiper>
   </view>
   <view class="page-content">
-    <view class="page-content__title"><text>优质服务</text></view>
-    <goods-list
-      class="goods-list-container"
-      goodsList="{{goodsList}}"
-      bind:click="goodListClickHandle"
-      bind:place-order="goodListPlaceOrderHandle"
-    />
+    <block wx:if="{{hasLocationAuth}}">
+      <view class="page-content__title"><text>优质服务</text></view>
+      <goods-list
+        class="goods-list-container"
+        goodsList="{{goodsList}}"
+        bind:click="goodListClickHandle"
+        bind:place-order="goodListPlaceOrderHandle"
+      />
+    </block>
+    <block wx:if="{{noLocationAuth}}">
+      <view class="page-auth-setting">
+        <text class="tag">服务需获取您的地理位置信息</text>
+        <view class="auth-btn" bindtap="setLocationAuth">点击设置位置权限</view>
+      </view>
+    </block>
   </view>
 </view>

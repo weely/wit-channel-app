@@ -3,7 +3,9 @@ import { fetchGoodsList } from '../../services/goods'
 
 Page({
   data: {
-    pageLoading: false,
+    noLocationAuth: false,
+    hasLocationAuth: false,
+    pageLoading: true,
     swiperOptions: [],
     goodsList: []
   },
@@ -18,12 +20,30 @@ Page({
   onShow() {
     this.getTabBar().init();
   },
-  init() {
+  async init() {
     this.loadHomePage()
+    await this.checkLocationAuth()
+    if (this.data.hasLocationAuth) {
+      this.loadGoodsList(true)
+    }
+  },
+  async checkLocationAuth() {
+    const context = this
+    try {
+      const res = await wx.getSetting()
+      if (res.authSetting['scope.userLocation']) {
+        context.switchLocationAuth(true)
+      } else {
+        await wx.authorize({scope: 'scope.userLocation'})
+        context.switchLocationAuth(true)
+      }
+    } catch (err) {
+      console.log('地理位置未授权，错误信息', err)
+      context.switchLocationAuth(false)
+    }
   },
   loadHomePage() {
     wx.stopPullDownRefresh()
-
     this.setData({
       pageLoading: true,
     })
@@ -32,8 +52,6 @@ Page({
         swiperOptions: swiper,
         pageLoading: false,
       })
-
-      this.loadGoodsList(true)
     })
   },
   async loadGoodsList(fresh = false) {
@@ -85,5 +103,27 @@ Page({
   },
   imageLoadError(e){
     console.log(e)
+  },
+  setLocationAuth() {
+    const context = this
+    wx.openSetting({
+      withSubscriptions: true,
+      success(res) {
+        context.switchLocationAuth(res.authSetting['scope.userLocation'])
+        if (res.authSetting['scope.userLocation']) {
+          context.loadGoodsList(true)
+        }
+      },
+      fail(err){
+        console.log(err)
+        context.switchLocationAuth(false)
+      },
+    })
+  },
+  switchLocationAuth(hasAuth){
+    this.setData({
+      hasLocationAuth: hasAuth,
+      noLocationAuth: !hasAuth
+    })
   }
 })

@@ -3,7 +3,7 @@ import http from '../utils/http'
 
 const customerServiceInfo = {
     servicePhone: '18566766448',
-    serviceTimeDuration: '每周三至周五 9:00-12:00  13:30-18:30',
+    serviceTimeDuration: '每周一至周日 9:00-24:00',
 }
 
 /** 获取个人中心信息 */

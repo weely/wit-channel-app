@@ -19,10 +19,34 @@
 .page-content {
   padding-top: 24rpx;
   width: 100%;
+  margin-bottom: 120rpx;
 }
 
 .page-content__title {
   /* border-top: solid 1rpx #eee; */
   font-size: 32rpx;
   font-weight: bold;
+}
+
+.page-auth-setting {
+  padding: 80rpx 0;
+  text-align: center;
+}
+
+.page-auth-setting .tag{
+  color: gray;
+  font-size: 26rpx;
+}
+
+.page-auth-setting .auth-btn {
+  font-size: 28rpx;
+  color: #fff;
+  background-color: #fa4126;
+  padding: 12rpx 60rpx;
+  width: fit-content;
+  margin: 32rpx auto;
+  border-radius: 40rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }

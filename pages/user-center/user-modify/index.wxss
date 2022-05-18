@@ -33,3 +33,17 @@
   font-size: 28rpx;
   color: #606060;
 }
+
+.m-form-item .sumbit-btn {
+  font-size: 28rpx;
+  width: 40%;
+  min-width: 200rpx;
+  color: #fff;
+  background-color: #fa4126;
+  padding: 12rpx 60rpx;
+  margin: 32rpx auto;
+  border-radius: 40rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

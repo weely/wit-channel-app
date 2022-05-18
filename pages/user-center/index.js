@@ -22,14 +22,19 @@ Page({
       url: '../user-center/person-info/index'
     })
   },
-  toCarManage() {
+  toServerManage() {
     wx.navigateTo({
-      url: '../user-center/car/index'
+      url: '/pages/service-manage/receiving-addr/index'
     })
   },
   toOrderManage () {
     wx.switchTab({
       url: '/pages/order/index',
+    })
+  },
+  toAbout() {
+    wx.navigateTo({
+      url: '/pages/about/index'
     })
   },
 
