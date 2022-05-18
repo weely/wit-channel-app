@@ -9,20 +9,11 @@
         <view wx:if="{{goods.resume}}" class="goods-card__resume">{{goods.resume}}</view>
       </view>
       <view class="goods-card__down">
-        <view wx:if="{{ goods.price }}" class="spec-for-price">
-          <text class="currency">{{currency}}</text>
-          <text class="price">
-            <text>{{priceArr[0]}}</text><text wx:if="{{priceArr[1]}}">{{priceArr[1]}}</text>
-          </text>
-        </view>
-        <view wx:if="{{goods.originPrice && isValidityLinePrice}}" class="goods-card__origin-price">
-          <text class="currency">{{currency}}</text>
-          <text class="price">
-            <text>{{originPriceArr[0]}}</text><text wx:if="{{originPriceArr[1]}}">{{originPriceArr[1]}}</text>
-          </text>
-        </view>
+        <price wx:if="{{ goods.price }}" wr-class="spec-for-price" symbol-class="class-goods-symbol" price="{{goods.price}}" symbol="{{currency}}" type="lighter" />
+        <price wx:if="{{goods.originPrice && isValidityLinePrice}}" wr-class="goods-card__origin-price" price="{{goods.originPrice}}" symbol="{{currency}}" type="delthrough" />
         <view class="goods-card__place-order" id="{{independentID}}-cart" data-id="{{independentID}}" catchtap="placeOrderHandle">
-          <text>下单</text><image class="icon__place-order" src="/assets/icons/next.png" mode="aspectFit" />
+          <text>下单</text>
+          <image class="icon__place-order" src="/assets/icons/next.png" mode="aspectFit" />
         </view>
       </view>
     </view>

@@ -1,5 +1,3 @@
-import { formatPrice } from '../../utils/util'
-
 Component({
   options: {
     addGlobalClass: true,
@@ -22,17 +20,10 @@ Component({
         if (!data) {
           return
         }
-        let isValidityLinePrice = true
-        if (data.originPrice && data.price && data.originPrice < data.price) {
-          isValidityLinePrice = false
-        }
-        const priceArr = formatPrice(data.price)
-        const originPriceArr = formatPrice(data.originPrice)
+        const isValidityLinePrice = data.originPrice && data.price && +data.originPrice > +data.price
         this.setData({
           goods: data,
           isValidityLinePrice,
-          priceArr: priceArr,
-          originPriceArr: originPriceArr
         })
       },
     },
@@ -56,10 +47,10 @@ Component({
 
   data: {
     independentID: '',
-    goods: { id: '' },
+    goods: {
+      id: ''
+    },
     isValidityLinePrice: false,
-    priceArr: [],
-    originPriceArr: []
   },
 
   lifetimes: {
@@ -75,16 +66,24 @@ Component({
 
   methods: {
     clickHandle() {
-      this.triggerEvent('click', { goods: this.data.goods })
+      this.triggerEvent('click', {
+        goods: this.data.goods
+      })
     },
 
     clickThumbHandle() {
-      this.triggerEvent('thumb', { goods: this.data.goods })
+      this.triggerEvent('thumb', {
+        goods: this.data.goods
+      })
     },
 
     placeOrderHandle(e) {
-      const { id } = e.currentTarget
-      const { id: cardID } = e.currentTarget.dataset
+      const {
+        id
+      } = e.currentTarget
+      const {
+        id: cardID
+      } = e.currentTarget.dataset
       this.triggerEvent('place-order', {
         ...e.detail,
         id,
@@ -100,11 +99,16 @@ Component({
       } else {
         independentID = `goods-card-${~~(Math.random() * 10 ** 8)}`
       }
-      this.setData({ independentID })
+      this.setData({
+        independentID
+      })
     },
 
     init() {
-      const { thresholds, id } = this.properties
+      const {
+        thresholds,
+        id
+      } = this.properties
       this.genIndependentID(id);
       if (thresholds && thresholds.length) {
         this.createIntersectionObserverHandle()

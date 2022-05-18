@@ -1,41 +1,6 @@
 
 // import { getDistance } from './util'
 
-export async function setAuth(scopeType = 'scope.userLocation') {
-  const res = await wx.getSetting()
-  if (res.authSetting[scopeType]) {
-    return 
-  }
-  wx.getSetting({
-    success(res) {
-      if (!res.authSetting[scopeType]) {
-        wx.authorize({
-          scope: scopeType,
-          success () {
-            // 用户已经授权
-          },
-          fail() {
-            wx.openSetting({
-              withSubscriptions: true,
-              success(res) {
-                console.log(res)
-              },
-              fail(err){
-                console.log('errr',err)
-              },
-              complete(c) {
-                console.log('c', c)
-              }
-            })
-          }
-        })
-      } else {
-        return true
-      }
-    }
-  })
-}
-
 // export function refreshLocation() {
 //   wx.getLocation({
 //     type: 'gcj02', //返回可以用于 wx.openLocation 的经纬度

@@ -1,4 +1,6 @@
-import { formatPrice } from '../../utils/util'
+import {
+  formatPrice
+} from '../../utils/util'
 
 Component({
   externalClasses: ['wr-class', 'symbol-class', 'decimal-class'],
@@ -12,7 +14,7 @@ Component({
       type: null,
       value: '',
       observer(price) {
-        this.format(price);
+        this.format(price)
       },
     }, // 价格, 以分为单位
     type: {
@@ -42,8 +44,10 @@ Component({
   methods: {
     format(price) {
       const priceArr = formatPrice(price)
-      
-      this.setData({ priceArr })
+
+      this.setData({
+        priceArr
+      })
     },
   },
 });

@@ -12,7 +12,7 @@ function mockFetchGoodsList(pageIndex = 1, pageSize = 20) {
         thumb: item.primaryImage,
         title: item.title,
         price: item.minSalePrice,
-        originPrice: item.maxLinePrice,
+        originPrice: item.maxSalePrice,
         resume: item.resume
       }
     })

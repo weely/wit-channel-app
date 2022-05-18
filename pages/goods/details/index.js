@@ -10,7 +10,6 @@ Page({
   data: {
     goodId: '',
     details: {},
-    maxLinePrice: 0,
     minSalePrice: 0,
     maxSalePrice: 0,
     current: 1
@@ -22,13 +21,11 @@ Page({
         primaryImage,
         minSalePrice,
         maxSalePrice,
-        maxLinePrice,
       } = details
 
       this.setData({
         details,
         maxSalePrice: maxSalePrice ? parseInt(maxSalePrice) : 0,
-        maxLinePrice: maxLinePrice ? parseInt(maxLinePrice) : 0,
         minSalePrice: minSalePrice ? parseInt(minSalePrice) : 0,
         primaryImage,
       })
