@@ -2,5 +2,8 @@
   "navigationBarTitleText": "服务详情",
   "usingComponents": {
     "price": "/components/price/index"
+  },
+  "componentPlaceholder": {
+    "price": "view"
   }
 }

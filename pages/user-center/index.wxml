@@ -41,17 +41,17 @@
       </view>
     </view>
     <view class="uc-group">
-      <view class="userpage-citem" bindtap="toShowCustomerService">
-        <view class="citem-label">客服热线</view>
-        <view class="citem-ricon">
-          <image src="/assets/icons/consult.png" mode="aspectFill"></image>
-        </view>
-      </view>
-      <view class="gap-line"></view>
       <view class="userpage-citem" bindtap="toAbout">
         <view class="citem-label">关于我们</view>
         <view class="citem-ricon">
           <image src="/assets/icons/about.png" mode="aspectFill"></image>
+        </view>
+      </view>
+      <view class="gap-line"></view>
+      <view class="userpage-citem" bindtap="toShowCustomerService">
+        <view class="citem-label">客服热线</view>
+        <view class="citem-ricon">
+          <image src="/assets/icons/consult.png" mode="aspectFill"></image>
         </view>
       </view>
     </view>

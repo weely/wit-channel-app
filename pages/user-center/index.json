@@ -3,5 +3,8 @@
   "navigationStyle": "custom",
   "usingComponents": {
     "popup": "/components/popup/index"
+  },
+  "componentPlaceholder": {
+    "popup": "view"
   }
 }
