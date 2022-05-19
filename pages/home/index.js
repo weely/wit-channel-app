@@ -47,7 +47,7 @@ Page({
       pageLoading: true,
     })
     fetchHome().then((res) => {
-      const { swiper } = res.data.data
+      const { swiper } = res
       this.setData({
         swiperOptions: swiper,
         pageLoading: false,

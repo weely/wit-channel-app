@@ -6,22 +6,20 @@ function mockFetchHome() {
   const { genSwiperImageList } = require('../model/swiper')
   return delay().then(() => {
     return {
-      data: {
-        data: {
-          swiper: genSwiperImageList()
-        }
-      }
+      swiper: genSwiperImageList()
     }
   })
 }
 
 /** 获取首页数据 */
-export function fetchHome() {
+export async function fetchHome() {
   if (config.useMock) {
     return mockFetchHome()
   }
-  return http({
-    url: `/wx/fetchHome`,
-    method: 'get',
-  })
+  try {
+    const res = await http({ url: `/wx/fetchHome`, method: 'get' })
+    return Promise.resolve(res.data.data)
+  } catch(err) {
+    return Promise.reject(err)
+  }
 }
