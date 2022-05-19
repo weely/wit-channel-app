@@ -7,13 +7,12 @@ Page({
     hasLocationAuth: false,
     pageLoading: true,
     swiperOptions: [],
-    goodsList: []
+    goodsList: [],
+    goodListPagination: {
+      index: 0,
+      num: 20,
+    },
   },
-  goodListPagination: {
-    index: 0,
-    num: 20,
-  },
-
   onLoad() {
     this.init()
   },
@@ -47,7 +46,8 @@ Page({
     this.setData({
       pageLoading: true,
     })
-    fetchHome().then(({ swiper }) => {
+    fetchHome().then((res) => {
+      const { swiper } = res.data.data
       this.setData({
         swiperOptions: swiper,
         pageLoading: false,
@@ -56,29 +56,21 @@ Page({
   },
   async loadGoodsList(fresh = false) {
     if (fresh) {
-      wx.pageScrollTo({
-        scrollTop: 0,
-      })
+      wx.pageScrollTo({ scrollTop: 0 })
     }
-
     this.setData({ goodsListLoadStatus: 1 })
-
-    const pageSize = this.goodListPagination.num
-    let pageIndex = this.goodListPagination.index + 1
-    if (fresh) {
-      pageIndex = 0
-    }
+    const pageSize = this.data.goodListPagination.num
+    let pageNo = this.data.goodListPagination.index + 1
+    if (fresh) pageNo = 0
 
     try {
-      const nextList = await fetchGoodsList(pageIndex, pageSize)
-      
+      const nextList = await fetchGoodsList(pageNo, pageSize)
       this.setData({
         goodsList: fresh ? nextList : this.data.goodsList.concat(nextList),
         goodsListLoadStatus: 0,
+        ['goodListPagination.index']: pageNo,
+        ['goodListPagination.num']: pageSize
       })
-
-      this.goodListPagination.index = pageIndex
-      this.goodListPagination.num = pageSize
     } catch (err) {
       this.setData({ goodsListLoadStatus: 3 })
     }

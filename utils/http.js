@@ -1,8 +1,8 @@
 import { config } from '../config/index'
-const app = getApp()
 
 const http = (options) => {
   return new Promise((resolve, reject) => {
+    const app = getApp()
     const header = {
       'Authorization': 'Bearer ' + app.globalData.access_token,
       ...options.header

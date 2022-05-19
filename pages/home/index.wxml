@@ -9,7 +9,7 @@
       <block wx:for="{{swiperOptions}}" wx:key="unique">
         <swiper-item>
           <view class="swiper-item">
-            <image src="{{item.img}}" mode="aspectFill" lazy-load binderror="imageLoadError" class="swiper-item__img"></image>
+            <image src="{{item.url}}" mode="aspectFill" lazy-load binderror="imageLoadError" class="swiper-item__img"></image>
           </view>
         </swiper-item>
       </block>

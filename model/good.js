@@ -5,7 +5,7 @@ const defaultDesc = [`${imgPrefix}/goods/details-1.png`];
 
 const allGoods = [
   {
-    goodId: '135686633',
+    id: '135686633',
     title: 'T恤',
     resume: '纯色纯棉休闲圆领短袖T恤纯白亲肤厚柔软细腻面料纯白短袖套头T恤',
     primaryImage: 'https://cdn-we-retail.ym.tencent.com/tsr/goods/nz-08b.png',
@@ -24,7 +24,7 @@ const allGoods = [
     ],
   },
   {
-    goodId: '135691628',
+    id: '135691628',
     title: '运动上衣',
     resume: '运动连帽拉链卫衣休闲开衫长袖多色运动细绒面料运动上衣',
     images: [
@@ -44,7 +44,7 @@ const allGoods = [
     ],
   },
   {
-    goodId: '135686623',
+    id: '135686623',
     title: '机顶盒',
     resume: '腾讯极光盒子4智能网络电视机顶盒6K千兆网络机顶盒4K高分辨率',
     primaryImage: 'https://cdn-we-retail.ym.tencent.com/tsr/goods/dz-3a.png',
@@ -62,7 +62,7 @@ const allGoods = [
     ],
   },
   {
-    goodId: '135681628',
+    id: '135681628',
     title: '午休毯连帽披肩',
     resume: '带帽午休毯虎年款多功能加厚加大加绒简约多功能午休毯连帽披肩',
     primaryImage: 'https://cdn-we-retail.ym.tencent.com/tsr/goods/muy-3a.png',
@@ -81,7 +81,7 @@ const allGoods = [
     soldNum: 102,
   },
   {
-    goodId: '135681626',
+    id: '135681626',
     title: '耳机',
     resume: '迷你便携高颜值蓝牙无线耳机立体声只能触控式操作简约立体声耳机',
     primaryImage: 'https://cdn-we-retail.ym.tencent.com/tsr/goods/dz-2a.png',
@@ -100,7 +100,7 @@ const allGoods = [
     soldNum: 102,
   },
   {
-    goodId: '135681624',
+    id: '135681624',
     title: '不锈钢刀叉勺套装',
     resume: '不锈钢刀叉勺套装家用西餐餐具ins简约耐用不锈钢金色银色可选',
     primaryImage: 'https://cdn-we-retail.ym.tencent.com/tsr/goods/gh-2b.png',
@@ -124,10 +124,6 @@ const allGoods = [
  * @param {string} id
  */
  export function genGood(id) {
-  const specID = ['135681624', '135681628']
-  if (specID.indexOf(id) > -1) {
-    return allGoods.filter((good) => good.goodId === id)[0]
-  }
   const item = allGoods[id % allGoods.length];
   return {
     ...item,
