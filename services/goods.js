@@ -5,7 +5,7 @@ import http from '../utils/http'
 
 export function parseGoodItem(item) {
   return {
-    goodId: item.id,
+    id: item.id,
     thumb: item.primaryImage,
     title: item.title,
     price: item.minSalePrice,
@@ -57,13 +57,15 @@ export async function fetchGoodsList(params) {
   }
 }
 
-
 /** 获取商品详情 */
-export function fetchGood(ID = 0) {
+export async function fetchGood(GoodID = 0) {
   if (config.useMock) {
-    return mockFetchGood(ID);
+    return mockFetchGood(GoodID)
   }
-  return new Promise((resolve) => {
-    resolve('real api');
-  });
+  try {
+    const res = await http({  url: `/products/${GoodID}`, method: 'get' })
+    return Promise.resolve(res.data.data)
+  } catch(err) {
+    return Promise.resolve({})
+  }
 }

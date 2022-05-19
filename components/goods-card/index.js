@@ -78,27 +78,17 @@ Component({
     },
 
     placeOrderHandle(e) {
-      const {
-        id
-      } = e.currentTarget
-      const {
-        id: cardID
-      } = e.currentTarget.dataset
+      // const { id } = e.currentTarget
+      const { id: cardID } = e.currentTarget.dataset
       this.triggerEvent('place-order', {
         ...e.detail,
-        id,
         cardID,
         goods: this.data.goods,
       })
     },
 
     genIndependentID(id) {
-      let independentID
-      if (id) {
-        independentID = id
-      } else {
-        independentID = `goods-card-${~~(Math.random() * 10 ** 8)}`
-      }
+      const independentID = id || `goods-card-${~~(Math.random() * 10 ** 8)}`
       this.setData({
         independentID
       })
@@ -152,6 +142,5 @@ Component({
         this.intersectionObserverContext = null
       }
     },
-
   },
 })

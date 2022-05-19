@@ -77,16 +77,13 @@ Page({
   },
   goodListClickHandle(e) {
     const { index } = e.detail
-    const { goodId } = this.data.goodsList[index]
+    const { id } = this.data.goodsList[index]
     wx.navigateTo({
-      url: `/pages/goods/details/index?goodId=${goodId}`,
+      url: `/pages/goods/details/index?id=${id}`,
     })
   },
   goodListPlaceOrderHandle(e) {
     const { goods } = e.detail
-
-    console.log('--index--', goods)
-
     wx.showToast({
       title: '下单',
       icon: 'success',

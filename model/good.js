@@ -127,7 +127,6 @@ const allGoods = [
   const item = allGoods[id % allGoods.length];
   return {
     ...item,
-    goodId: `${id}`,
     desc: item?.desc || defaultDesc,
     images: item?.images || [item?.primaryImage],
   };

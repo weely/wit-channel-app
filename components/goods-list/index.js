@@ -10,7 +10,7 @@ Component({
       type: String,
       value: '',
       observer: (id) => {
-        this.genIndependentID(id);
+        this.genIndependentID(id)
       },
     },
     thresholds: {
@@ -37,7 +37,6 @@ Component({
 
     onPLaceOrder(e) {
       const { index } = e.currentTarget.dataset
-      console.log('--index--', index, e.detail)
       this.triggerEvent('place-order', { ...e.detail, index })
     },
 
