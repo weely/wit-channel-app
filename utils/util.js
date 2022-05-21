@@ -25,7 +25,7 @@ export const formatTime = date => {
  * @param {*} price 
  * @param {*} priceUnit  yuan | fen
  */
-export function formatPrice (price, priceUnit='fen', fill=false) {
+export function formatPrice(price, priceUnit = 'fen', fill = false) {
   price = parseFloat(price)
   const pArr = []
   if (!isNaN(price)) {
@@ -46,7 +46,7 @@ export function formatPrice (price, priceUnit='fen', fill=false) {
     }
     if (!fill) {
       // 如果 fill 为 false， 不显示小数末尾的0
-      if (pArr[1] === '00') pArr[1] = '' 
+      if (pArr[1] === '00') pArr[1] = ''
       else if (pArr[1][1] === '0') pArr[1] = pArr[1][0]
     }
     if (isMinus) {
@@ -56,12 +56,12 @@ export function formatPrice (price, priceUnit='fen', fill=false) {
   return pArr
 }
 
-function  latLngToRadian(latLng) {
+function latLngToRadian(latLng) {
   return latLng * Math.PI / 180
 }
 
 export function getDistance(pointA, pointB) {
-  const EARTH_RADIUS = 6378000
+  const EARTH_RADIUS = 6378137
 
   const radLat1 = latLngToRadian(pointA.latitude)
   const radLng1 = latLngToRadian(pointA.longitude)
@@ -71,4 +71,22 @@ export function getDistance(pointA, pointB) {
   const b = radLng1 - radLng2
 
   return 2 * Math.Asin(Math.Sqrt(Math.Pow(Math.Sin(a / 2), 2) + Math.Cos(radLat1) * Math.Cos(radLat2) * Math.Pow(Math.Sin(b / 2), 2))) * EARTH_RADIUS
+}
+
+/**
+ * svg base64编码图片
+ * @param svgText {string} 拼接的svg字符串
+ * @returns imgStr {string} base64转码后的图片
+ */
+export function getBase64Url(svgText, w, h) {
+  if (!svgText) {
+    return ''
+  }
+  const agreement = 'data:image/svg+xml;base64,';
+  svgText = `<svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="${w}" height="${h}" viewBox="0 0 ${w} ${h}">` +
+    svgText +
+    '</svg>';
+  svgText = encodeURIComponent(svgText)
+  const base64Url = btoa(unescape(svgText))
+  return agreement + base64Url
 }

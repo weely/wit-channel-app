@@ -20,5 +20,8 @@ App({
 
     // 登录
     wxLogin(this)
-  }
+  },
+  // require(path) {
+  //   return require(`${path}`)
+  // },
 })

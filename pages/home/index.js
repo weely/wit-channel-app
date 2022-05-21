@@ -1,10 +1,11 @@
 import { fetchHome } from '../../services/home'
 import { fetchGoodsList } from '../../services/goods'
+import { checkLocationAuth } from '../../utils/location'
 
+const app = getApp()
 Page({
   data: {
-    noLocationAuth: false,
-    hasLocationAuth: false,
+    hasLocationAuth: null,
     pageLoading: true,
     swiperOptions: [],
     goodsList: [],
@@ -21,24 +22,10 @@ Page({
   },
   async init() {
     this.loadHomePage()
-    await this.checkLocationAuth()
-    if (this.data.hasLocationAuth) {
+    const hasLocationAuth = await checkLocationAuth(this)
+    this.setData({ hasLocationAuth })
+    if (hasLocationAuth) {
       this.loadGoodsList(true)
-    }
-  },
-  async checkLocationAuth() {
-    const context = this
-    try {
-      const res = await wx.getSetting()
-      if (res.authSetting['scope.userLocation']) {
-        context.switchLocationAuth(true)
-      } else {
-        await wx.authorize({scope: 'scope.userLocation'})
-        context.switchLocationAuth(true)
-      }
-    } catch (err) {
-      console.log('地理位置未授权，错误信息', err)
-      context.switchLocationAuth(false)
     }
   },
   loadHomePage() {
@@ -84,11 +71,17 @@ Page({
   },
   goodListPlaceOrderHandle(e) {
     const { goods } = e.detail
-    wx.showToast({
-      title: '下单',
-      icon: 'success',
-      duration: 2000
+    wx.navigateTo({
+      url: `/pages/order/place/index?id=${goods.id}`,
+      success: function(res) {
+        res.eventChannel.emit('acceptDataFromOpenerPage', { ...goods })
+      }
     })
+    // wx.showToast({
+    //   title: '下单',
+    //   icon: 'success',
+    //   duration: 2000
+    // })
   },
   imageLoadError(e){
     console.log(e)
@@ -98,21 +91,16 @@ Page({
     wx.openSetting({
       withSubscriptions: true,
       success(res) {
-        context.switchLocationAuth(res.authSetting['scope.userLocation'])
-        if (res.authSetting['scope.userLocation']) {
+        const hasLocationAuth = res.authSetting['scope.userLocation']
+        context.setData({ hasLocationAuth })
+        if (hasLocationAuth) {
           context.loadGoodsList(true)
         }
       },
       fail(err){
         console.log(err)
-        context.switchLocationAuth(false)
+        context.setData({ hasLocationAuth: false })
       },
-    })
-  },
-  switchLocationAuth(hasAuth){
-    this.setData({
-      hasLocationAuth: hasAuth,
-      noLocationAuth: !hasAuth
     })
   }
 })

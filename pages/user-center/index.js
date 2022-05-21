@@ -29,7 +29,7 @@ Page({
   },
   toOrderManage () {
     wx.switchTab({
-      url: '/pages/order/index',
+      url: '/pages/order/manage/index',
     })
   },
   toAbout() {

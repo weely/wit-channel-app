@@ -5,7 +5,7 @@ export default [
     "selectedIconPath": "/assets/icons/homeActive.png",
     "text": "首页"
   }, {
-    "pagePath": "/pages/order/index",
+    "pagePath": "/pages/order/manage/index",
     "iconPath": "/assets/icons/order.png",
     "selectedIconPath": "/assets/icons/orderActive.png",
     "text": "订单"

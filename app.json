@@ -1,7 +1,8 @@
 {
   "pages": [
     "pages/home/index",
-    "pages/order/index",
+    "pages/order/manage/index",
+    "pages/order/place/index",
     "pages/goods/details/index",
     "pages/logs/logs",
     "pages/user-center/index",
@@ -31,7 +32,7 @@
         "text": "首页"
       },
       {
-        "pagePath": "pages/order/index",
+        "pagePath": "pages/order/manage/index",
         "iconPath": "assets/icons/order.png",
         "selectedIconPath": "assets/icons/orderActive.png",
         "text": "订单"

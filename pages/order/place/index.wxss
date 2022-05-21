@@ -1,0 +1,26 @@
+.place-order-page {
+  padding: 0;
+  margin: 0;
+}
+
+.location-container {
+  text-align: center;
+  padding: 8rpx 0 20px;
+  background-color: #ff0000;
+}
+.location-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 28rpx;
+  color: #eeeeee;
+}
+.location-content .location-label {
+  padding: 16rpx 0 24rpx;
+  font-size: 24rpx;
+}
+.location-content .location-icon{
+  width: 80rpx;
+  height: 80rpx;
+}

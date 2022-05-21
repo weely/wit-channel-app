@@ -1,0 +1,9 @@
+<view class="place-order-page">
+  <view class="location-container">
+    <view class="location-content">
+      <image class="location-icon" src="../../../assets/icons/position.svg" mode="aspectFill"></image>
+      <view class="location-label">您的位置</view>
+      <text>{{address}} ></text>
+    </view>
+  </view>
+</view>

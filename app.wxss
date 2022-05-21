@@ -1,4 +1,8 @@
 /**app.wxss**/
+page {
+  background-color: #ffffff;
+}
+
 .container {
   height: 100%;
   display: flex;
@@ -9,4 +13,3 @@
   box-sizing: border-box;
 } 
 
-/* bg: https://s1.ax1x.com/2022/05/15/O28jkd.png */
