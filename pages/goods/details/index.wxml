@@ -22,6 +22,21 @@
       <view class="class-goods-discount">优惠价</view>
       <price wr-class="class-goods-del" price="{{maxSalePrice}}" type="delthrough" />
     </view>
+    <view class="receiving-addr">
+      <view class="receiving-addr-label">服务地址<text class="receiving-addr-tips">(请选择您所在区域的地址)</text></view>
+      <view class="receiving-addr-content">
+        <view class="svg-icon location">
+          <image class="svg-icon__inner" src="../../../assets/icons/position.svg" mode="aspectFill"></image>
+        </view>
+        <view class="addr-details-container">
+          <view bindtap="toChooseLocation" class="address">{{address}}</view>
+          <view class="receiving-addr-contact">{{receiveAddr.userName}} {{receiveAddr.telNumber}}</view>
+        </view>
+        <view class="svg-icon right-icon">
+          <image class="svg-icon__inner" src="../../../assets/icons/next.svg" mode="aspectFill"></image>
+        </view>
+      </view>
+    </view>
 
     <view class="goods-title">{{details.title}}</view>
     <view class="goods-resume">{{details.resume}}</view>

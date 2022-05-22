@@ -22,7 +22,7 @@
         class="goods-list-container"
         goodsList="{{goodsList}}"
         bind:click="goodListClickHandle"
-        bind:place-order="goodListPlaceOrderHandle"
+        bind:place-order="goodListClickHandle"
       />
     </block>
     <block wx:if="{{hasLocationAuth === false}}">

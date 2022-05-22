@@ -2,7 +2,6 @@
   "pages": [
     "pages/home/index",
     "pages/order/manage/index",
-    "pages/order/place/index",
     "pages/goods/details/index",
     "pages/logs/logs",
     "pages/user-center/index",

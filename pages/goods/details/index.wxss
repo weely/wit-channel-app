@@ -6,7 +6,7 @@
 
 .goods-detail-page .swipe-img {
   width: 100%;
-  height: 750rpx;
+  height: 400rpx;
 }
 
 .goods-detail-page .gd-swiper-wrapper {
@@ -14,8 +14,8 @@
 }
 
 .goods-detail-page .gd-swiper {
-  height: 750rpx;
   width: 100%;
+  height: 400rpx;
   font-size: 0;
 }
 
@@ -122,4 +122,46 @@
   color: #fa4126;
   font-weight: bold;
   font-family: DIN Alternate;
+}
+
+.receiving-addr {
+  border-top: solid 1rpx #ccc;
+  border-bottom: solid 1rpx #ccc;
+  padding: 16rpx 0;
+  color: #333;
+  font-size: 28rpx;
+  margin: 16rpx 0;
+}
+.receiving-addr .receiving-addr-tips {
+  color: #999999;
+  font-size: 24rpx;
+}
+.receiving-addr .receiving-addr-label {
+  font-size: 32rpx;
+  height: 60rpx;
+}
+.receiving-addr .receiving-addr-content {
+  display: flex;
+  align-items: center;
+}
+.receiving-addr .receiving-addr-content .svg-icon {
+  font-size: 32rpx;
+  width: 32rpx;
+  height: 32rpx;
+}
+.receiving-addr .receiving-addr-content .svg-icon.location {
+  margin-right: 16rpx;
+  height: 60rpx;
+}
+.receiving-addr .addr-details-container {
+  flex: 1;
+}
+.receiving-addr .receiving-addr-content .address{
+  text-overflow:ellipsis;
+}
+.receiving-addr .receiving-addr-contact {
+  color: #999999;
+  font-size: 24rpx;
+  height: 32rpx;
+  text-overflow:ellipsis;
 }

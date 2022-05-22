@@ -72,21 +72,3 @@ export function getDistance(pointA, pointB) {
 
   return 2 * Math.Asin(Math.Sqrt(Math.Pow(Math.Sin(a / 2), 2) + Math.Cos(radLat1) * Math.Cos(radLat2) * Math.Pow(Math.Sin(b / 2), 2))) * EARTH_RADIUS
 }
-
-/**
- * svg base64编码图片
- * @param svgText {string} 拼接的svg字符串
- * @returns imgStr {string} base64转码后的图片
- */
-export function getBase64Url(svgText, w, h) {
-  if (!svgText) {
-    return ''
-  }
-  const agreement = 'data:image/svg+xml;base64,';
-  svgText = `<svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="${w}" height="${h}" viewBox="0 0 ${w} ${h}">` +
-    svgText +
-    '</svg>';
-  svgText = encodeURIComponent(svgText)
-  const base64Url = btoa(unescape(svgText))
-  return agreement + base64Url
-}
