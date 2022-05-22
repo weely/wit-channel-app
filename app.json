@@ -2,14 +2,14 @@
   "pages": [
     "pages/home/index",
     "pages/order/manage/index",
+    "pages/order/place/index",
     "pages/goods/details/index",
     "pages/logs/logs",
     "pages/user-center/index",
     "pages/user-center/person-info/index",
     "pages/user-center/user-modify/index",
     "pages/about/index",
-    "pages/service-manage/index",
-    "pages/service-manage/receiving-addr/index"
+    "pages/service-manage/index"
   ],
   "window": {
     "backgroundTextStyle": "light",

@@ -1,0 +1,89 @@
+
+.place-order-page {
+  padding: 16rpx 24rpx;
+  height: 100vh;
+  background-color: #f5f5f5;
+  font-size: 32rpx;
+}
+.place-order-page .page-container {
+  background-color: #fff;
+  padding: 24rpx;
+  border-radius: 16rpx;
+  margin-bottom: 24rpx;
+}
+.receiving-addr {
+  color: #333;
+}
+.receiving-addr .receiving-addr-tips {
+  color: #999999;
+  font-size: 24rpx;
+}
+.receiving-addr .receiving-addr-label {
+  font-size: 32rpx;
+  height: 60rpx;
+}
+.receiving-addr .receiving-addr-content {
+  display: flex;
+  align-items: center;
+}
+.receiving-addr .receiving-addr-content .svg-icon {
+  font-size: 32rpx;
+  width: 32rpx;
+  height: 32rpx;
+}
+.receiving-addr .receiving-addr-content .svg-icon.location {
+  margin-right: 16rpx;
+  height: 60rpx;
+}
+.receiving-addr .addr-details-container {
+  flex: 1;
+}
+.receiving-addr .receiving-addr-content .address{
+  text-overflow:ellipsis;
+}
+.receiving-addr .receiving-addr-contact {
+  color: #999999;
+  font-size: 24rpx;
+  height: 32rpx;
+  text-overflow:ellipsis;
+}
+
+.order-bottom-operation {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  box-sizing: border-box;
+  width: 100%;
+  background-color: #fff;
+  border-top: solid 1rpx #eee;
+  padding: 20rpx 24rpx calc(48rpx + env(safe-area-inset-bottom));
+}
+
+.place-order-page .order-bottom-operation .operation-groups {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.place-order-page .operation-groups .class-goods-symbol {
+  font-size: 28rpx;
+  font-weight: normal;
+}
+.place-order-page .operation-groups .class-goods-fee {
+  font-size: 36rpx;
+  color: #333;
+  font-weight: bold;
+  font-family: DIN Alternate;
+}
+.place-order-page .operation-groups .total {
+  margin-right: 16rpx;
+}
+.place-order-page .order-bottom-operation .place-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 40rpx;
+  color: #fff;
+  background-color: #fa4126;
+  border-radius: 40rpx 40rpx;
+  padding: 16rpx 40rpx;
+}

@@ -1,5 +1,7 @@
+
 .user-center-page {
-  color: #aaa;
+  height: 100vh;
+  /* color: #aaa; */
   background-color: #f5f5f5;
 }
 

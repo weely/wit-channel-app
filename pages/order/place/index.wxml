@@ -1,0 +1,36 @@
+<view class="place-order-page">
+  <view class="page-container location">
+    <view class="receiving-addr">
+      <view class="receiving-addr-label">订单地址<text class="receiving-addr-tips">(请选择您所在区域的地址)</text></view>
+      <view class="receiving-addr-content">
+        <view class="svg-icon location">
+          <image class="svg-icon__inner" src="../../../assets/icons/position.svg" mode="aspectFill"></image>
+        </view>
+        <view class="addr-details-container">
+          <view bindtap="toChooseLocation" class="address">{{address}}</view>
+          <view class="receiving-addr-contact">{{receiveAddr.userName}} {{receiveAddr.telNumber}}</view>
+        </view>
+        <view class="svg-icon right-icon">
+          <image class="svg-icon__inner" src="../../../assets/icons/next.svg" mode="aspectFill"></image>
+        </view>
+      </view>
+    </view>
+    <view>
+    </view>
+  </view>
+  
+  <view class="page-container order">
+    <view class="order-title">{{goods.title || '订单项目'}}</view>
+    <view >
+    </view>
+  </view>
+
+  <view class="order-bottom-operation">
+    <view class="operation-groups">
+      <price class="total" wr-class="class-goods-fee" symbol-class="class-goods-symbol" label="合计：" price="{{goods.price}}" type="lighter" />
+      <view class="place-btn-container">
+        <view bind:tap="toSumbitOrder" class="place-btn">提交订单</view>
+      </view>
+    </view>
+  </view>
+</view>

@@ -77,11 +77,6 @@ Page({
         res.eventChannel.emit('acceptDataFromOpenerPage', { ...goods })
       }
     })
-    // wx.showToast({
-    //   title: '下单',
-    //   icon: 'success',
-    //   duration: 2000
-    // })
   },
   imageLoadError(e){
     console.log(e)

@@ -23,8 +23,18 @@ Page({
     })
   },
   toServerManage() {
-    wx.navigateTo({
-      url: '/pages/service-manage/receiving-addr/index'
+    wx.chooseAddress({
+      success: (result) => {
+        const { provinceName,cityName,countyName ,detailInfo} = result
+        const address = `${provinceName} ${cityName} ${countyName} ${detailInfo}`
+        wx.setStorageSync('receivingAdress', {
+          ...result,
+          address: address
+        })
+      },
+      fail: (err) => {
+        console.log(err)
+      }
     })
   },
   toOrderManage () {
