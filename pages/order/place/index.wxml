@@ -1,9 +1,11 @@
 <view class="place-order-page">
   <view class="location-container">
     <view class="location-content">
-      <image class="location-icon" src="../../../assets/icons/position.svg" mode="aspectFill"></image>
+      <view class="svg-icon">
+        <image class="svg-icon__inner" src="../../../assets/icons/position.svg" mode="aspectFill"></image>
+      </view>
       <view class="location-label">您的位置</view>
-      <text>{{address}} ></text>
+      <view bindtap="toChooseLocation">{{adInfo.name}} ></view>
     </view>
   </view>
 </view>
