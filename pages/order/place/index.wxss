@@ -26,15 +26,6 @@
   display: flex;
   align-items: center;
 }
-.receiving-addr .receiving-addr-content .svg-icon {
-  font-size: 32rpx;
-  width: 32rpx;
-  height: 32rpx;
-}
-.receiving-addr .receiving-addr-content .svg-icon.location {
-  margin-right: 16rpx;
-  height: 60rpx;
-}
 .receiving-addr .addr-details-container {
   flex: 1;
 }
@@ -46,6 +37,15 @@
   font-size: 24rpx;
   height: 32rpx;
   text-overflow:ellipsis;
+}
+.receiving-addr-content .next-icon image,
+.receiving-addr-content .position-icon image
+{
+  height: 40rpx;
+  width: 40rpx;
+}
+.receiving-addr-content .position-icon image {
+  margin-right: 16rpx;
 }
 
 .order-bottom-operation {
