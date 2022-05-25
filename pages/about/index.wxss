@@ -1,0 +1,28 @@
+.about-page {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  padding: 16rpx 24rpx;
+  font-size: 32rpx;
+  color: #303030;
+  background-color: #f5f5f5;
+  line-height: 2;
+}
+
+.about-page .product-logo {
+  text-align: center;
+  margin: 24rpx 0;
+}
+.about-page .product-logo image {
+  width: 250rpx;
+  height: 250rpx;
+  /* height: 172rpx; */
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.about-p-item .i-label {
+  display: inline;
+  font-size: 28rpx;
+  font-weight: bold;
+}

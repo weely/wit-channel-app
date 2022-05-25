@@ -1,3 +1,29 @@
-<view>
-  <text>关于我们</text>
+<view class="about-page">
+  <view class="product-logo">
+    <image src="https://weely.cc/static-assets/default_pro_icon.jpg" mode="aspectFill"></image>
+  </view>
+  <view class="about-p-item">
+    <view class="i-label">服务项目：</view>
+    <text>上门洗车，家电清洗</text>
+  </view>
+  <view class="about-p-item">
+    <view class="i-label">所属公司：</view>
+    <text>深圳市飞兔智行科技有限公司</text>
+  </view>
+  <view class="about-p-item">
+    <view class="i-label"><text space="ensp">联 系 人：</text></view>
+    <text>邱经理</text>
+  </view>
+  <view class="about-p-item">
+    <view class="i-label">联系电话：</view>
+    <text>18566766448</text>
+  </view>
+  <view class="about-p-item">
+    <view class="i-label">联系地址：</view>
+    <text>广东省深圳市</text>
+  </view>
+  <view class="about-p-item">
+    <view class="i-label"><text space="ensp">简    介：</text></view>
+    <text>小强快跑是深圳市飞兔智行科技有限公司旗下品牌，本公司是一家专业致力于汽车和家电上门服务的公司，我们有着多年的汽车维修保养及家电维修清洗的经验，一直以来以专业的技术和优质的服务受到广大消费者的喜爱，今后的日子我们会更加奋发图强，服务好每一个客户。</text>
+  </view>
 </view>
