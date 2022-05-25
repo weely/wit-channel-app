@@ -18,14 +18,17 @@
     <view>
     </view>
   </view>
-  
   <view class="page-container order">
     <view class="order-title">{{goods.title || '订单项目'}}</view>
     <view >
     </view>
   </view>
-
-  <view class="order-bottom-operation">
+  <view wx:if="{{canBuy === false}}" class="no-service-tips">
+    <view>！很抱歉，您所选地址暂未提供服务</view>
+    <view>服务目前仅限于深圳市</view>
+    <view bindtap="toChooseLocation" class="re-location-btn">重新选取收获地址</view>
+  </view>
+  <view wx:if="{{canBuy}}" class="order-bottom-operation">
     <view class="operation-groups">
       <price class="total" wr-class="class-goods-fee" symbol-class="class-goods-symbol" label="合计：" price="{{goods.price}}" type="lighter" />
       <view class="place-btn-container">

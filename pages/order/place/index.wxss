@@ -87,3 +87,22 @@
   border-radius: 40rpx 40rpx;
   padding: 16rpx 40rpx;
 }
+
+.no-service-tips {
+  background-color: #fff;
+  padding: 24rpx;
+  color: gray;
+  font-size: 28rpx;
+  text-align: center;
+  line-height: 2;
+}
+
+.re-location-btn {
+  margin: 40rpx auto;
+  font-size: 28rpx;
+  color: #fff;
+  background-color: #fa4126;
+  border-radius: 40rpx 40rpx;
+  padding: 12rpx 40rpx;
+  width: fit-content;
+}
