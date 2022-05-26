@@ -1,0 +1,13 @@
+<view class="pay-page">
+  <view class="page-container waiting">
+    <view>下单成功，等待师傅接单。。。</view>
+  </view>
+  <view class="page-container pre-pay">
+    <view class="item">订单信息：{{goodName}}</view>
+    <view class="item">联系电话：{{orderDetails.mobile}}</view>
+    <view class="item"><text space="ensp">费    用：</text>
+      <price class="total" wr-class="class-goods-fee" symbol-class="class-goods-symbol" price="{{orderDetails.cost}}" type="lighter" /> 元
+    </view>
+    <view class="pay-btn" bindtap="toPay">预付款</view>
+  </view>
+</view>

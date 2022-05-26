@@ -34,7 +34,6 @@ export function getDistance(lat1, lng1, lat2, lng2) {
 
 export async function geocoder(qqmapsdk, address, region='') {
   return new Promise((resolve, reject) => {
-    console.log('-----', qqmapsdk)
     qqmapsdk.geocoder({
       //获取表单传入地址
       address: address, //地址参数，例：固定地址，address: '北京市海淀区彩和坊路海淀西大街74号',

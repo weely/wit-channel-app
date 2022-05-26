@@ -9,7 +9,8 @@
     "pages/user-center/person-info/index",
     "pages/user-center/user-modify/index",
     "pages/about/index",
-    "pages/service-manage/index"
+    "pages/service-manage/index",
+    "pages/order/pay/index"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -51,5 +52,5 @@
       "desc": "你的位置信息将用于小程序位置接口的效果展示"
     }
   },
-  "lazyCodeLoading":"requiredComponents"
+  "lazyCodeLoading": "requiredComponents"
 }

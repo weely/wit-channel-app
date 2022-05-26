@@ -1,6 +1,7 @@
 import { config } from '../../../config/index'
 import { checkLocationAuth } from '../../../utils/location'
 import { wxLogin } from '../../../services/login'
+import { placeOrderApi } from '../../../services/orders'
 const QQMapWX = require('../../../libs/qqmap-wx-jssdk.min.js')
 const app = getApp()
 let qqmapsdk;
@@ -92,9 +93,25 @@ Page({
         })
         return
       }
-      // TODO 下单
+      const params = {
+        productId:this.data.goods.id,
+        clientId: app.globalData.userInfo.id,
+        cost: this.data.goods.price,
+        mobile: this.data.receiveAddr.telNumber,
+        receivingAddr: this.data.address,
+        remark: ''
+      }
+      const res = await placeOrderApi(params)
+      if (res.id) {
+        wx.navigateTo({
+          url: `../pay/index?orderId=${res.id}&goodName=${this.data.goods.title}`,
+        })
+      }
     } catch(err) {
       console.log(err)
+      wx.showToast({
+        title: '下单失败',
+      })
     }
   },
   onLoad() {
