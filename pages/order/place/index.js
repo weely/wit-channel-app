@@ -5,7 +5,7 @@ import { placeOrderApi } from '../../../services/orders'
 const QQMapWX = require('../../../libs/qqmap-wx-jssdk.min.js')
 const app = getApp()
 let qqmapsdk;
-const allowOrderCity = '广州'
+const allowOrderCity = '深圳'
 
 Page({
   data: {
