@@ -7,7 +7,8 @@ Page({
    */
   data: {
     orderDetails: {},
-    goodName: ''
+    goodName: '',
+    hasReceivingOrder: false
   },
   toPay() {
     const timeStamp = new Date().getTime() + ''
